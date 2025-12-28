@@ -47,7 +47,6 @@ A comprehensive event ticketing system with facial recognition for secure entry 
 
 
 
-```
 
 ## Project Structure
 
