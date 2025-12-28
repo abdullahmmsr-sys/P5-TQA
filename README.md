@@ -16,7 +16,7 @@ A comprehensive event ticketing system with facial recognition for secure entry 
 - User authentication (email/password)
 - Browse available events
 - Purchase event tickets
-- Face enrollment after ticket purchase
+- Face enrollment before ticket purchase
 - View purchased tickets
 - QR code generation for backup entry
 
@@ -43,57 +43,10 @@ A comprehensive event ticketing system with facial recognition for secure entry 
 4. **face_templates** - Encrypted face embeddings
 5. **entry_logs** - Gate entry records
 
-## Setup Instructions
 
-### Prerequisites
-- Flutter SDK (3.0+)
-- Python 3.9+
-- Supabase account
-- macOS/iOS development setup
 
-### Installation
 
-1. **Install Flutter**
-```bash
-# Install Flutter using homebrew
-brew install --cask flutter
 
-# Or download from https://docs.flutter.dev/get-started/install
-```
-
-2. **Set up Supabase**
-- Create account at https://supabase.com
-- Create new project
-- Copy your project URL and anon key
-- Run the SQL schema (see docs/database_schema.sql)
-
-3. **Install Flutter dependencies**
-```bash
-cd flutter_app
-flutter pub get
-```
-
-4. **Configure environment**
-- Copy `.env.example` to `.env`
-- Add your Supabase credentials
-
-5. **Set up Face Recognition API**
-```bash
-cd face_recognition_api
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-6. **Run the apps**
-```bash
-# Terminal 1: Face Recognition API
-cd face_recognition_api
-python main.py
-
-# Terminal 2: Flutter App
-cd flutter_app
-flutter run
 ```
 
 ## Project Structure
@@ -128,13 +81,4 @@ event_ticket_app/
 4. HTTPS only in production
 5. Secure storage of face embeddings
 
-## Development Notes
 
-- This project is stored on external SSD at `/Volumes/external/event_ticket_app`
-- Face recognition uses InsightFace with buffalo_l model
-- Quality checks ensure good face captures (blur, brightness, angle)
-- Supports multiple face templates per ticket for better accuracy
-
-## License
-
-MIT License
